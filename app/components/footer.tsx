@@ -54,7 +54,7 @@ export default function Footer() {
 
       <div className="w-full h-px bg-gray-50 mt-10 mb-2"></div>
 
-      <h1 className="text-center">© 2025 All rights reserved. Reliance Retail Ltd.</h1>
+      <h1 className="text-center">© 2025 All rights reserved. Sengka Mart.</h1>
 
     </div>
   )

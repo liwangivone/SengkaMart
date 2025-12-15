@@ -1,3 +1,6 @@
+import { Link } from "react-router"
+import BerasCard from "~/components/beras-card"
+
 export default function Home() {
   const categories = ['Sayuran', 'Buah-buahan', 'Bahan Bangunan', 'Kebutuhan Sehari-hari']
   const carousel = Array.from({ length: 3 })
@@ -56,44 +59,29 @@ export default function Home() {
           <div className="w-full flex justify-between">
             <h1 className="text-xl">Harga Terbaik untuk <span className="text-cyan-600 font-bold">Beras</span></h1>
 
-            <div className="flex items-center space-x-2">
+            <Link to={'/beras'} className="flex items-center space-x-2">
               <p>Lihat Semua</p>
               <span>
                 <img src="/chevron-right.svg" alt="panah" />
               </span>
-            </div>
+            </Link>
           </div>
 
           <div className="flex justify-between mt-4">
             {beras.map((b, i) => (
-              <div key={i} className="rounded-lg border border-gray-200 overflow-hidden">
-                <div className="w-full bg-gray-100 flex justify-center items-center py-8 px-14 relative">
-                  <img src="/beras.png" alt="beras" width={120} />
-
-                  <div className="absolute top-0 right-0 bg-red-500 text-white p-2 text-xs">
-                    <p>{b.diskonPersen}</p>
-                    <p>OFF</p>
-                  </div>
-                </div>
-
-                <div className="px-4 py-2">
-                  <p className="font-bold">{b.nama}</p>
-                  <p className="font-bold">{b.harga}</p>
-                  <p className="font-bold text-green-600">{b.diskon}</p>
-                </div>
-              </div>
+              <BerasCard key={i} nama={b.nama} harga={b.harga} diskon={b.diskon} diskonPersen={b.diskonPersen} />
             ))}
           </div>
 
           <div className="w-full flex justify-between mt-10">
             <h1 className="text-xl">Belanja <span className="text-cyan-600 font-bold">Produk Lainnya</span></h1>
 
-            <div className="flex items-center space-x-2">
+            <Link to={'/beras'} className="flex items-center space-x-2">
               <p>Lihat Semua</p>
               <span>
                 <img src="/chevron-right.svg" alt="panah" />
               </span>
-            </div>
+            </Link>
           </div>
 
           <div className="mt-4 flex justify-between">
