@@ -12,7 +12,7 @@ export default function Home() {
     <main className="pb-10">
       <div className="flex space-x-4 px-8 py-4">
         {categories.map((cat, i) => (
-          <div className="w-fit">
+          <div key={i} className="w-fit">
             <select
               defaultValue={cat}
               className="select rounded-2xl bg-[#008ECC] text-white font-bold px-4 pr-10 text-xs"
@@ -20,7 +20,6 @@ export default function Home() {
               <option disabled>{cat}</option>
             </select>
           </div>
-
         ))}
       </div>
 
@@ -108,13 +107,8 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-
         </div>
       </div>
-
-
-      {/* <div className="h-96"></div> */}
     </main>
   )
 }
