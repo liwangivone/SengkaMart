@@ -11,7 +11,7 @@ export default function Navbar() {
         <img src="/logo-sengka.svg" alt="logo" width={120} />
       </Link>
 
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 items-center">
         {location.pathname === '/' && (
           <div className="flex bg-[#F3F9FB] p-2 rounded-md space-x-2 w-150">
             <img src="/search.svg" alt="search" width={16} />
@@ -30,22 +30,20 @@ export default function Navbar() {
             <p className="text-sm">Masuk/Daftar</p>
           </Link>
         ) : (
-          <div className="dropdown dropdown-end flex items-center">
-            <label className="btn btn-ghost px-4 normal-case flex items-center space-x-1.5">
+          <div className="dropdown dropdown-bottom dropdown-end flex items-center">
+            <label tabIndex={0} className="btn px-4 flex items-center space-x-1.5">
               <img src="/person.svg" alt="user" width={20} />
               <span className="text-sm">{username}</span>
             </label>
 
             <ul
-              tabIndex={0}
+              tabIndex={-1}
               className="dropdown-content menu bg-white rounded-box z-50 w-52 p-2 shadow"
             >
-              <li><Link to="/profile">Profil</Link></li>
-              <li><Link to="/orders">Pesanan Saya</Link></li>
+              <li><Link to="/history">Pesanan Saya</Link></li>
               <li><button className="text-red-500">Keluar</button></li>
             </ul>
           </div>
-
         )}
       </div>
     </nav>
