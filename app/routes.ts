@@ -5,6 +5,7 @@ export default [
     index("routes/home.tsx"),
     route('/beras', 'routes/beras.tsx'),
     route('/detail', 'routes/detail.tsx'),
+    route('/history', 'routes/history.tsx'),
   ]),
   route('/login', 'routes/login.tsx'),
   route('/register', 'routes/register.tsx'),
