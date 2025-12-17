@@ -3,7 +3,12 @@ import { Link, useLocation } from "react-router"
 export default function Navbar() {
   const location = useLocation()
   const isLoggedIn = typeof window !== "undefined" && localStorage.getItem("isLoggedIn") === "true"
-  const username = 'leowidj'
+  const username = typeof window !== "undefined" && localStorage.getItem('username')
+
+  const logout = () => {
+    localStorage.removeItem('isLoggedIn')
+    window.location.reload()
+  }
 
   return (
     <nav className="sticky top-0 z-50 flex justify-between px-8 py-4 bg-white border-b border-gray-200">
@@ -41,7 +46,7 @@ export default function Navbar() {
               className="dropdown-content menu bg-white rounded-box z-50 w-52 p-2 shadow"
             >
               <li><Link to="/history">Pesanan Saya</Link></li>
-              <li><button className="text-red-500">Keluar</button></li>
+              <li><button className="text-red-500" onClick={logout}>Keluar</button></li>
             </ul>
           </div>
         )}
